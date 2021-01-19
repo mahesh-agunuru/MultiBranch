@@ -16,7 +16,7 @@ pipeline {
                 echo 'test .'
                  snDevOpsStep()
                 sleep 5
-                snDevOpsChange()
+                //snDevOpsChange()
             }
         }
         stage('Deploy for development') {
