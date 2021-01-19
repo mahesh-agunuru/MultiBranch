@@ -14,7 +14,7 @@ pipeline {
         stage('test') {
             steps {
                 echo 'test .'
-                  snDevOpsStep()
+                snDevOpsStep()
                 sleep 5
                 //snDevOpsChange()
             }
