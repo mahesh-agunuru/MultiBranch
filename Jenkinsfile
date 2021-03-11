@@ -15,8 +15,8 @@ pipeline {
             steps {
                 echo 'test .'
                  snDevOpsStep()
-                sleep 5
-               snDevOpsArtifact(artifactsPayload:"""{"artifacts": [{"name": "development_artifact.jar","version": "1.3","semanticVersion": "1.3.0","repositoryName": "development_artifact_repo"}],"stageName": "test"}""")
+                sleep 10
+               snDevOpsArtifact(artifactsPayload:"""{"artifacts": [{"name": "development_artifact.jar","version": "1.4","semanticVersion": "1.4.0","repositoryName": "development_artifact_repo"}],"stageName": "test"}""")
                 //snDevOpsChange()
             }
         }
