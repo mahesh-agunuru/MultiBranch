@@ -7,16 +7,16 @@ pipeline {
         stage('build') {
             steps {
                 echo 'build ...'
-                 snDevOpsStep()
+                // snDevOpsStep()
                 sleep 5
             }
         }
         stage('test') {
             steps {
                 echo 'test .'
-                 snDevOpsStep()
+                // snDevOpsStep()
                 sleep 10
-               snDevOpsArtifact(artifactsPayload:"""{"artifacts": [{"name": "development_artifact.jar","version": "1.8","semanticVersion": "1.8.0","repositoryName": "development_artifact_repo"}],"stageName": "test"}""")
+              // snDevOpsArtifact(artifactsPayload:"""{"artifacts": [{"name": "development_artifact.jar","version": "1.8","semanticVersion": "1.8.0","repositoryName": "development_artifact_repo"}],"stageName": "test"}""")
                 //snDevOpsChange()
             }
         }
@@ -26,7 +26,7 @@ pipeline {
             }
             steps {
                  echo 'dev branch deployment ...'
-                 snDevOpsStep()
+                // snDevOpsStep()
               sleep 5
              // snDevOpsArtifact(artifactsPayload:"""{"artifacts": [{"name": "development_artifact.jar","version": "1.0","semanticVersion": "1.0.0","repositoryName": "development_artifact_repo"}],"stageName": "Deploy for development"}""")
                 
@@ -38,7 +38,7 @@ pipeline {
             }
             steps {
                 echo 'prod branch deployment .'
-                 snDevOpsStep()
+                // snDevOpsStep()
                 sleep 5
             }
         }
