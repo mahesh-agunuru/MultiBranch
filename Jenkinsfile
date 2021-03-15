@@ -35,7 +35,7 @@ pipeline {
                 branch 'prod'  
             }
             steps {
-                echo 'prod branch deployment .'
+                echo 'prod branch deployment .'.
                   //snDevOpsStep()
               //snDevOpsArtifact(artifactsPayload:"""{"artifacts": [{"name": "prod_artifact.jar","version": "1.2","semanticVersion": "1.2.0","repositoryName": "prod_artifact_repo"}],"stageName": "Deploy for production"}""")
                 sleep 5
