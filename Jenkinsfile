@@ -28,7 +28,7 @@ pipeline {
                  echo 'dev branch deployment ...'
                 // snDevOpsStep()
               sleep 5
-             //snDevOpsArtifact(artifactsPayload:"""{"artifacts": [{"name": "development_artifact.jar","version": "1.2","semanticVersion": "1.2.0","repositoryName": "development_artifact_repo"}],"stageName": "Deploy for development"}""")
+             snDevOpsArtifact(artifactsPayload:"""{"artifacts": [{"name": "development_artifact.jar","version": "1.1","semanticVersion": "1.1.0","repositoryName": "development_artifact_repo"}],"stageName": "Deploy for development"}""")
                 
             }
         }
