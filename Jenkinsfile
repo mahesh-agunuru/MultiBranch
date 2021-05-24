@@ -6,18 +6,16 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                echo 'build .'
-                 // snDevOpsStep()
+                echo 'build... '
                 sleep 5
             }
         }
         stage('test') {
             steps {
-                echo 'test .'
-                //snDevOpsStep()
+                echo 'test ..'
                 sleep 5
-              //snDevOpsArtifact(artifactsPayload:"""{"artifacts": [{"name": "prod_artifact.jar","version": "1.6","semanticVersion": "1.6.0","repositoryName": "prod_artifact_repo"}],"stageName": "test"}""")
-                //snDevOpsChange()
+                //snDevOpsArtifact(artifactsPayload:"""{"artifacts": [{"name": "test_artifact.jar","version": "1.${BUILD_NUMBER}","semanticVersion": "1.${BUILD_NUMBER}.0","repositoryName": "test_artifact_repo"}]}""")
+                snDevOpsChange()
             }
         }
         stage('Deploy for development') {
@@ -25,8 +23,7 @@ pipeline {
                 branch 'development'
             }
             steps {
-                 echo 'dev branch deployment ..'
-                  //snDevOpsStep()
+                 echo 'dev branch deployment ...'
                 sleep 5
             }
         }
@@ -36,8 +33,7 @@ pipeline {
             }
             steps {
                 echo 'prod branch deployment .'
-                  //snDevOpsStep()
-              snDevOpsArtifact(artifactsPayload:"""{"artifacts": [{"name": "prod_artifact.jar","version": "1.2","semanticVersion": "1.2.0","repositoryName": "prod_artifact_repo"}],"stageName": "Deploy for production"}""")
+                snDevOpsArtifact(artifactsPayload:"""{"artifacts": [{"name": "prod_artifact.jar","version": "1.${BUILD_NUMBER}","semanticVersion": "1.${BUILD_NUMBER}.0","repositoryName": "prod_artifact_repo"}]}""")
                 sleep 5
             }
         }
