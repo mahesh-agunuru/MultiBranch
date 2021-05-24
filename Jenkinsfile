@@ -12,7 +12,7 @@ pipeline {
         }
         stage('test') {
             steps {
-                echo 'test..'
+                echo 'test.'
                 sleep 5
                 //snDevOpsArtifact(artifactsPayload:"""{"artifacts": [{"name": "test_artifact.jar","version": "1.${BUILD_NUMBER}","semanticVersion": "1.${BUILD_NUMBER}.0","repositoryName": "dev_artifact_repo"}]}""")
                 //snDevOpsChange()
