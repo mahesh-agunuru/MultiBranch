@@ -28,7 +28,7 @@ pipeline {
         }
         stage('Deploy for production') {
             when {
-                branch 'production'  
+                branch 'prod'  
             }
             steps {
                 echo 'prod branch deployment .'
