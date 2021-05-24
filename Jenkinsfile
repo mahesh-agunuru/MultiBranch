@@ -23,7 +23,7 @@ pipeline {
                 branch 'development'
             }
             steps {
-                 echo 'dev branch deployment ...'
+                 echo 'dev branch deployment ..'
                 sleep 5
             }
         }
