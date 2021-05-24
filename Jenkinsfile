@@ -6,17 +6,15 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                echo 'build ...'
-//snDevOpsStep()
+                echo 'build ..'
                 sleep 5
             }
         }
         stage('test') {
             steps {
                 echo 'test .'
-//snDevOpsStep()
                 sleep 5
-                //snDevOpsChange()
+
             }
         }
         stage('Deploy for development') {
@@ -24,18 +22,16 @@ pipeline {
                 branch 'development'
             }
             steps {
-                 echo 'dev branch deployment...'
-//snDevOpsStep()
+                 echo 'dev branch deployment ...'
                 sleep 5
             }
         }
         stage('Deploy for production') {
             when {
-                branch 'prod'  
+                branch 'production'  
             }
             steps {
-                echo 'prod branch deployment..'
-//snDevOpsStep()
+                echo 'prod branch deployment .'
                 sleep 5
             }
         }
